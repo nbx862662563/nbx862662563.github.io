@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="1.对象的声明方式​    第一种方式：字面量">
+  <meta name="description" content="1.什么是继承？​    继承就是获取存在对象已有属性和方法的一种方式.。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原型链">
-<meta property="og:url" content="http://yoursite.com/2019/01/15/原型链/index.html">
+<meta property="og:title" content="继承">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/继承/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.对象的声明方式​    第一种方式：字面量">
+<meta property="og:description" content="1.什么是继承？​    继承就是获取存在对象已有属性和方法的一种方式.。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-16T01:40:37.045Z">
+<meta property="og:updated_time" content="2019-02-16T01:41:38.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型链">
-<meta name="twitter:description" content="1.对象的声明方式​    第一种方式：字面量">
+<meta name="twitter:title" content="继承">
+<meta name="twitter:description" content="1.什么是继承？​    继承就是获取存在对象已有属性和方法的一种方式.。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/15/原型链/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/22/继承/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>原型链 | Hexo</title>
+  <title>继承 | Hexo</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原型链
+          <h1 class="post-title" itemprop="name headline">继承
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-01-15 12:30:01" itemprop="dateCreated datePublished" datetime="2019-01-15T12:30:01+08:00">2019-01-15</time>
+              <time title="创建时间：2019-01-22 17:35:42" itemprop="dateCreated datePublished" datetime="2019-01-22T17:35:42+08:00">2019-01-22</time>
             
 
             
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-16 09:40:37" itemprop="dateModified" datetime="2019-02-16T09:40:37+08:00">2019-02-16</time>
+                <time title="修改时间：2019-02-16 09:41:38" itemprop="dateModified" datetime="2019-02-16T09:41:38+08:00">2019-02-16</time>
               
             
           </span>
@@ -435,37 +435,29 @@
       
 
       
-        <h3 id="1-对象的声明方式"><a href="#1-对象的声明方式" class="headerlink" title="1.对象的声明方式"></a>1.对象的声明方式</h3><p>​    <strong>第一种方式：字面量</strong></p>
+        <h3 id="1-什么是继承？"><a href="#1-什么是继承？" class="headerlink" title="1.什么是继承？"></a>1.什么是继承？</h3><p>​    <strong>继承就是获取存在对象已有属性和方法的一种方式.。</strong></p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">            name:&quot;zs&quot;,</span><br><span class="line">            age:18</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">var obj1 = new Object(</span><br><span class="line">	&#123;name:&quot;zs&quot;,age:18&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>​    <strong>第二种方式：构造函数</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var Obj = function()&#123;</span><br><span class="line">	this.name = &quot;zs&quot;</span><br><span class="line">	this.age = 18</span><br><span class="line">&#125;</span><br><span class="line">var obj = new Obj();</span><br></pre></td></tr></table></figure>
-<p>​    <strong>第三种方式：Object.create</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123; name: &apos;zs&apos; &#125;</span><br><span class="line">var b = Object.create(a);</span><br></pre></td></tr></table></figure>
-<h3 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2.构造函数"></a>2.构造函数</h3><p>​    <strong>构造函数   new     ——-&gt;  实例对象</strong></p>
+<h3 id="2-继承的种类"><a href="#2-继承的种类" class="headerlink" title="2.继承的种类"></a>2.继承的种类</h3><h4 id="1-属性继承"><a href="#1-属性继承" class="headerlink" title="1.属性继承"></a>1.属性继承</h4><p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">            name:&quot;zs&quot;,</span><br><span class="line">            age:18,</span><br><span class="line">            get:function()&#123;</span><br><span class="line">                console.log(&quot;哈哈哈&quot;)</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">var obj2 = &#123;&#125;</span><br><span class="line">for(var i in obj1) &#123;</span><br><span class="line">	obj2[i] = obj1[i]</span><br><span class="line">&#125;</span><br><span class="line">console.log(obj2);</span><br></pre></td></tr></table></figure>
+<p>​    <strong>属性拷贝继承的问题</strong></p>
+<p>​     如果继承过来的成员是引用类型的话, 那么这个引用类型的成员在父对象和子对象之间是共享的, 也就是说修改了之后, 父子对象都会受到影响。</p>
 <p>​    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Student()&#123;</span><br><span class="line">	this.name = &quot;zs&quot;,</span><br><span class="line">	this.age = 18</span><br><span class="line">&#125;</span><br><span class="line">var student = new Student();</span><br><span class="line">console.log(student);//&#123;name: &quot;zs&quot;, age: 18&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>构造函数通过   new   运算符   创建一个新对象，其中构造函数中的  this  指向  创建出来的实例
-</code></pre><p>​    <strong>实例对象   拥有  <strong> proto </strong>属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(student.__proto__);</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;constructor: ƒ&#125;</span><br><span class="line">	constructor: ƒ Student()</span><br><span class="line">	__proto__: Object</span><br></pre></td></tr></table></figure>
-<p>​    <strong> proto </strong>  指向  实例对象的    <strong>原型</strong></p>
-<p>​    其中原型的  <em>constructor</em>  属性   指向   构造函数；</p>
-<p>​        圆形的  <em><strong> proto </strong></em>    属性   指向   Object构造函数的原型对象</p>
+<h4 id="2-原型继承"><a href="#2-原型继承" class="headerlink" title="2.原型继承"></a>2.原型继承</h4><p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Obj() &#123;</span><br><span class="line">	this.name = &quot;zs&quot;;</span><br><span class="line">	this.age = 18;</span><br><span class="line">&#125;</span><br><span class="line">Obj.prototype.sex = &quot;男&quot;;</span><br><span class="line"></span><br><span class="line">function Obj1() &#123;</span><br><span class="line">	this.name = &quot;ls&quot;;</span><br><span class="line">	this.age = 19</span><br><span class="line">&#125;</span><br><span class="line">Obj1.prototype = Obj.prototype;</span><br><span class="line">var man = new Obj1();</span><br><span class="line">console.log(man.sex);//&quot;男&quot;</span><br></pre></td></tr></table></figure>
+<p>​    原型式继承就是借用构造函数的原型对象实现继承. 即 子构造函数.prototype = 父构造函数.prototype </p>
 <p>​    </p>
-<p>​    <strong>实例对象的原型   也  拥有 <strong> proto </strong>属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(student.__proto__.__proto__);</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …&#125;</span><br><span class="line">constructor: ƒ Object()</span><br><span class="line">hasOwnProperty: ƒ hasOwnProperty()</span><br><span class="line">isPrototypeOf: ƒ isPrototypeOf()</span><br><span class="line">propertyIsEnumerable: ƒ propertyIsEnumerable()</span><br><span class="line">toLocaleString: ƒ toLocaleString()</span><br><span class="line">toString: ƒ toString()</span><br><span class="line">valueOf: ƒ valueOf()</span><br><span class="line">__defineGetter__: ƒ __defineGetter__()</span><br><span class="line">__defineSetter__: ƒ __defineSetter__()</span><br><span class="line">__lookupGetter__: ƒ __lookupGetter__()</span><br><span class="line">__lookupSetter__: ƒ __lookupSetter__()</span><br><span class="line">get __proto__: ƒ __proto__()</span><br><span class="line">set __proto__: ƒ __proto__()</span><br></pre></td></tr></table></figure>
-<p>​    实例对象的原型  的   原型对象，也是构造函数Object的原型对象，可以通过 Object.prototype  访问</p>
-<p>​    Object的原型对象   有  constructor: ƒ Object()   属性 指向  Object构造函数</p>
-<p>​    <strong>Object的原型对象的 <strong> proto </strong> 指向null</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.dir(student.__proto__.__proto__.__proto__);</span><br></pre></td></tr></table></figure>
-<p>​    打印结果为null</p>
-<h3 id="3-三角关系"><a href="#3-三角关系" class="headerlink" title="3.三角关系"></a>3.三角关系</h3><p>​    1.构造函数    new     实例对象；</p>
-<p>​    2.实例对象    <strong> proto </strong>  指向它的原型；</p>
-<p>​    3.实例对象的原型对象 可以通过constructor  查找  创建它的构造函数；</p>
-<p>​    4.实例对象的原型对象  的  <strong> proto </strong>  指向 Object 构造函数的  原型对象；</p>
-<p>​    5.Object 构造函数的原型对象  的   <strong> proto </strong> 指向null；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Obj() &#123;</span><br><span class="line">	this.name = &quot;zs&quot;;</span><br><span class="line">	this.age = 18;</span><br><span class="line">	this.sex = &quot;女&quot;</span><br><span class="line">&#125;</span><br><span class="line">Obj.prototype.sex = &quot;男&quot;;</span><br><span class="line"></span><br><span class="line">function Obj1() &#123;</span><br><span class="line">            this.name = &quot;ls&quot;;</span><br><span class="line">            this.age = 19</span><br><span class="line">&#125;</span><br><span class="line">Obj1.prototype = Obj.prototype;</span><br><span class="line">var man = new Obj1();</span><br><span class="line">var people = new Obj();</span><br><span class="line">console.log(man.sex);//男</span><br><span class="line">console.log(people.sex);//女</span><br></pre></td></tr></table></figure>
+<p>​    <strong>注意：</strong>在使用原型继承的时候，有优先级，JS首先会在实例上查找属性或方法，查找不到才会去原型链上查找，所以，如果实例上已经查找到了，直接输出。</p>
+<p>​    <strong>缺点</strong>：不能传参。</p>
+<h4 id="3-构造函数继承"><a href="#3-构造函数继承" class="headerlink" title="3.构造函数继承"></a><strong>3.构造函数继承</strong></h4><p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Obj1(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.age = 18</span><br><span class="line">&#125;</span><br><span class="line">function Obj2(name) &#123;</span><br><span class="line">	Obj1.call(this,name);//核心代码  通过call()和apply()方法在新创建的对象上执行构造函数</span><br><span class="line">&#125;</span><br><span class="line">var obj1 = new Obj1(&quot;zs&quot;);</span><br><span class="line">var obj2 = new Obj2(&quot;ls&quot;);</span><br><span class="line">console.log(obj1);//&#123;name: &quot;zs&quot;, age: 18&#125;</span><br><span class="line">console.log(obj2);//&#123;name: &quot;ls&quot;, age: 18&#125;</span><br></pre></td></tr></table></figure>
+<p>​    <strong>在子类构造函数的内部调用超类构造函数,通过使用call()和apply()方法可以在新创建的对象上执行构造函数  实现</strong> </p>
+<p>​    <strong>缺点</strong>：方法都在构造函数中定义，每次创建实例都会创建一遍方法。</p>
+<h4 id="4-组合继承"><a href="#4-组合继承" class="headerlink" title="4.组合继承"></a>4.组合继承</h4><p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Obj1() &#123;</span><br><span class="line">	this.name = &quot;zs&quot;;</span><br><span class="line">	this.age = 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Obj1.prototype.sayHi = function()&#123;</span><br><span class="line">	console.log(&quot;哈哈哈&quot;);</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line">function Obj2() &#123;</span><br><span class="line">	Obj1.call(this);</span><br><span class="line">&#125;</span><br><span class="line">Obj2.prototype = new Obj1();</span><br><span class="line">var obj2 = new Obj2();</span><br><span class="line">obj2.sayHi();//&quot;哈哈哈&quot;</span><br></pre></td></tr></table></figure>
+<p>​    子构造函数，要访问父构造函数的原型，使用组合继承。</p>
+<p>​    <strong>Obj2.prototype = new Obj1();关键点</strong>  （让子构造函数的原型===父构造函数的实例）</p>
+<p>​    </p>
 
       
     </div>
@@ -502,14 +494,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/20/深拷贝-浅拷贝/" rel="next" title="深拷贝/浅拷贝">
+                <i class="fa fa-chevron-left"></i> 深拷贝/浅拷贝
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/20/深拷贝-浅拷贝/" rel="prev" title="深拷贝/浅拷贝">
-                深拷贝/浅拷贝 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/25/闭包/" rel="prev" title="闭包">
+                闭包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-对象的声明方式"><span class="nav-number">1.</span> <span class="nav-text">1.对象的声明方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-构造函数"><span class="nav-number">2.</span> <span class="nav-text">2.构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-三角关系"><span class="nav-number">3.</span> <span class="nav-text">3.三角关系</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是继承？"><span class="nav-number">1.</span> <span class="nav-text">1.什么是继承？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-继承的种类"><span class="nav-number">2.</span> <span class="nav-text">2.继承的种类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-属性继承"><span class="nav-number">2.1.</span> <span class="nav-text">1.属性继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-原型继承"><span class="nav-number">2.2.</span> <span class="nav-text">2.原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-构造函数继承"><span class="nav-number">2.3.</span> <span class="nav-text">3.构造函数继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-组合继承"><span class="nav-number">2.4.</span> <span class="nav-text">4.组合继承</span></a></li></ol></li></ol></div>
             
 
           </div>
